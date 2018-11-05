@@ -18,7 +18,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user_id|integer|null: false, foreign_key: true|
-|name|string|null: false, unique: true, add_index|
+|name|string|null: false, unique: true, index: true|
 |email|string|null: false, unique: true|
 |password|string|null: false, unique: true|
 
