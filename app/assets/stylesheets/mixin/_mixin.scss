@@ -1,0 +1,18 @@
+@mixin comment-style {
+  margin-bottom: 40px;
+  .member {
+    float: left;
+    margin-right: 10px;
+    color: #434A54;
+    }
+  .chat__time {
+    float: left;
+    font-size: 12px;
+    color: #999999;
+  }
+  .comment {
+    clear: both;
+    font-size: 14px;
+    color: #434A54;
+  }
+}

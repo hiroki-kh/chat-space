@@ -1,0 +1,36 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ChatSpace
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+  #body
+    #group-header
+      .group-name
+        sampleグループ
+      .group-members
+        Members: seo neko
+
+    .edit-button
+      .button-name
+        =link_to "Edit"
+
+    #chat
+      .chat__comment1
+        .member
+          seo
+        .chat__time
+          2016/09/21 06:16:55
+        .comment
+          Hello world!
+
+      .chat__comment2
+        .member
+          neko
+        .chat__time
+          2016/09/22 06:16:55
+        .comment
+          Good by world!

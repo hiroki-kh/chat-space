@@ -1,0 +1,53 @@
+@import "./mixin/mixin";
+
+#body {
+  float: left;
+  width: calc(100vw - 300px);
+  #group-header {
+    padding-top: 35px;
+    padding-left: 40px;
+    font-size: 20px;
+    color: #333333;
+    float: left;
+    margin-bottom: 1px solid #eeeeee;
+    .group-name {
+      font-size: 20px;
+      color: #333333;
+      padding-bottom: 15px;
+    }
+    .group-members {
+      font-size: 12px;
+      color: #999999;
+    }
+  }
+
+
+  .edit-button {
+    float: right;
+    margin: 28px 40px;
+    .button-name {
+      a {
+        color: #38AEF0;
+        text-decoration: none;
+        border: 1px solid #38AEF0;
+        padding: 12px 20px;
+        text-align: center;
+      }
+    }
+  }
+
+  #chat {
+    height: 100vh;
+    padding-top: 46px;
+    padding-left: 40px;
+    clear: both;
+    background-color: #FAFAFA;
+    .chat__comment1 {
+      @include comment-style;
+    }
+    .chat__comment2 {
+      @include comment-style;
+    }
+  }
+}
+

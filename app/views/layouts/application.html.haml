@@ -10,21 +10,24 @@
   #wrapper
     #info
       チャットグループが作成されました。
-    #header
-      .user__name
-        seo
-        .font-awesome__user
-          %ul.font-awesome__user--list
-            %li.font-awesome--create-group.font-color
-              =link_to do
-                =fa_icon 'edit'
-            %li.font-awesome--edit-user.font-color
-              =link_to do
-                =fa_icon 'cog'
+    #sidebar
+      #header
+        .user__name
+          seo
+          .font-awesome__user
+            %ul.font-awesome__user--list
+              %li.font-awesome--create-group.font-color
+                =link_to do
+                  =fa_icon 'edit'
+              %li.font-awesome--edit-user.font-color
+                =link_to do
+                  =fa_icon 'cog'
 
-    #navbar
-      .group
-        .group__name
-          sample
-        .group--last-message
-          Good by world!
+      #navbar
+        .group
+          .group__name
+            sample
+          .group--last-message
+            Good by world!
+
+    =yield
