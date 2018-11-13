@@ -34,3 +34,10 @@
           2016/09/22 06:16:55
         .comment
           Good by world!
+
+    #footer
+      .message-area
+        %form{:action => "/", :method => "post"}
+          %input{:name => "comment", :placeholder => "type a message", :class => "comment-form"}
+      .send-button
+        =link_to "Send"

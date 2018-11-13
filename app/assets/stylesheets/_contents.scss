@@ -1,15 +1,19 @@
 @import "./mixin/mixin";
 
+#wrapper {
+  height: 100%;
+  width: 100vw;
+}
+
 #body {
   float: left;
   width: calc(100vw - 300px);
   #group-header {
     padding-top: 35px;
     padding-left: 40px;
+    padding-bottom: 2px;
     font-size: 20px;
-    color: #333333;
     float: left;
-    margin-bottom: 1px solid #eeeeee;
     .group-name {
       font-size: 20px;
       color: #333333;
@@ -30,14 +34,14 @@
         color: #38AEF0;
         text-decoration: none;
         border: 1px solid #38AEF0;
-        padding: 12px 20px;
+        padding: 11px 20px;
         text-align: center;
       }
     }
   }
 
   #chat {
-    height: 100vh;
+    height: calc(100vh - 90px - 146px);
     padding-top: 46px;
     padding-left: 40px;
     clear: both;
@@ -49,5 +53,39 @@
       @include comment-style;
     }
   }
+
+  #footer {
+    height: 50px;
+    background-color: #dddddd;
+    padding: 20px 50px 20px 40px;
+    .message-area {
+      form {
+        input {
+          &::placeholder {
+            color: #434A54;
+            padding-left: 10px;
+          }
+          &[class="comment-form"] {
+            height: 50px;
+            width: calc(100% - 150px);
+            border: none;
+          }
+        }
+      }
+    }
+    .send-button {
+      float: right;
+      position: relative;
+      bottom: 37px;
+      a {
+        padding: 17px 30px;
+        color: #ffffff;
+        background-color: #38AEF0;
+        text-align: center;
+        text-decoration: none;
+      }
+    }
+  }
+
 }
 

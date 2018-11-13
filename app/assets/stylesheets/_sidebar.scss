@@ -29,7 +29,7 @@
     #navbar {
       width: 300px;
       background-color: #2f3e51;
-      height: 100%;
+      height: calc(100vh - 120px);
       padding-top: 20px;
         .group__name {
           font-size: 15px;
