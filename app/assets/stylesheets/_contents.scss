@@ -63,6 +63,7 @@
     .message-area {
       form {
         input[class="comment-form"] {
+          float: left;
           height: 50px;
           width: calc(100% - 150px);
           border: none;
@@ -71,24 +72,28 @@
             padding-left: 10px;
           }
         }
-        .upload-label {
-          padding-right: 10px;
-          background-color: #ffffff;
-          .upload-icon {
-            display: none;
+        .image-form {
+          line-height: 50px;
+          .upload-label {
+            float: left;
+            padding-right: 10px;
+            background-color: #ffffff;
+            .upload-icon {
+              display: none;
+            }
           }
         }
       }
     }
     .send-button {
-      float: right;
-      position: relative;
-      bottom: 37px;
       a {
-        padding: 17px 30px;
+        line-height: 50px;
+        float: right;
+        padding: 0px 30px;
+        margin-left: 15px;
+        height: 50px;
         color: #ffffff;
         background-color: #38AEF0;
-        text-align: center;
         text-decoration: none;
       }
     }

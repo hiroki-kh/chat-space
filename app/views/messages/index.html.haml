@@ -39,9 +39,10 @@
       .message-area
         %form{:action => "/", :method => "post"}
           %input{:name => "comment", :placeholder => "type a message", :class => "comment-form"}
-          %label.upload-label
-            %i.fa.fa-picture-o
-            %input{:type => "file", :class => "upload-icon"}
+          .image-form
+            %label.upload-label
+              %i.fa.fa-picture-o
+              %input{:type => "file", :class => "upload-icon"}
 
 
       .send-button
