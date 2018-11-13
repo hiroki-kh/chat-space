@@ -1,0 +1,46 @@
+@import "./config/variable";
+
+  #footer {
+    height: $formHeight;
+    width: calc(100vw - 390px);
+    background-color: #dddddd;
+    padding: 20px 50px 20px 40px;
+    float: left;
+    .message-area {
+      form {
+        input[class="comment-form"] {
+          float: left;
+          height: $formHeight;
+          width: calc(100% - 150px);
+          border: none;
+          &::placeholder {
+            color: #434A54;
+            padding-left: 10px;
+          }
+        }
+        .image-form {
+          line-height: 50px;
+          .upload-label {
+            float: left;
+            padding-right: 10px;
+            background-color: #ffffff;
+            .upload-icon {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+    .send-button {
+      a {
+        line-height: 50px;
+        float: right;
+        padding: 0px 30px;
+        margin-left: 15px;
+        height: $formHeight;
+        color: #ffffff;
+        background-color: $buttonAndInfoColor;
+        text-decoration: none;
+      }
+    }
+  }

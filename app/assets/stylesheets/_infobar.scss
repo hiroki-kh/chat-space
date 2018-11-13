@@ -1,5 +1,7 @@
+@import "./config/variable";
+
 #info {
-  background-color: #38AEF0;
+  background-color: $buttonAndInfoColor;
   color: white;
   text-align: center;
 }

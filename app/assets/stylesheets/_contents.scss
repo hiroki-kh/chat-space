@@ -1,4 +1,5 @@
 @import "./mixin/mixin";
+@import "./config/variable";
 
 #wrapper {
   height: 100%;
@@ -10,7 +11,7 @@
     height: 100px;
     padding: 0 40px;
     float: left;
-    width: calc(100vw - 380px);
+    width: $rightContentsWidth;
     .group-left {
       float: left;
       padding-top: 35px;
@@ -30,9 +31,9 @@
       margin-top: 28px;
       .button-name {
         a {
-          color: #38AEF0;
+          color: $buttonAndInfoColor;
           text-decoration: none;
-          border: 1px solid #38AEF0;
+          border: 1px solid $buttonAndInfoColor;
           padding: 11px 20px;
           text-align: center;
         }
@@ -41,7 +42,7 @@
   }
 
   #chat {
-    width: calc(100vw - 380px);
+    width: $rightContentsWidth;
     height: calc(100vh - 90px - 146px);
     padding: 46px 40px 0 40px;
     float: left;
@@ -51,50 +52,5 @@
     }
     .chat__comment2 {
       @include comment-style;
-    }
-  }
-
-  #footer {
-    height: 50px;
-    width: calc(100vw - 390px);
-    background-color: #dddddd;
-    padding: 20px 50px 20px 40px;
-    float: left;
-    .message-area {
-      form {
-        input[class="comment-form"] {
-          float: left;
-          height: 50px;
-          width: calc(100% - 150px);
-          border: none;
-          &::placeholder {
-            color: #434A54;
-            padding-left: 10px;
-          }
-        }
-        .image-form {
-          line-height: 50px;
-          .upload-label {
-            float: left;
-            padding-right: 10px;
-            background-color: #ffffff;
-            .upload-icon {
-              display: none;
-            }
-          }
-        }
-      }
-    }
-    .send-button {
-      a {
-        line-height: 50px;
-        float: right;
-        padding: 0px 30px;
-        margin-left: 15px;
-        height: 50px;
-        color: #ffffff;
-        background-color: #38AEF0;
-        text-decoration: none;
-      }
     }
   }
