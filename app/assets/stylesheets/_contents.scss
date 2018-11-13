@@ -5,46 +5,46 @@
   width: 100vw;
 }
 
-#body {
-  float: left;
-  width: calc(100vw - 300px);
+
   #group-header {
-    padding-top: 35px;
-    padding-left: 40px;
-    padding-bottom: 2px;
-    font-size: 20px;
+    height: 100px;
+    padding: 0 40px;
     float: left;
-    .group-name {
-      font-size: 20px;
-      color: #333333;
-      padding-bottom: 15px;
+    width: calc(100vw - 380px);
+    .group-left {
+      float: left;
+      padding-top: 35px;
+      .group-name {
+        font-size: 20px;
+        color: #333333;
+        padding-bottom: 15px;
+      }
+      .group-members {
+        font-size: 12px;
+        color: #999999;
+      }
     }
-    .group-members {
-      font-size: 12px;
-      color: #999999;
-    }
-  }
 
-
-  .edit-button {
-    float: right;
-    margin: 28px 40px;
-    .button-name {
-      a {
-        color: #38AEF0;
-        text-decoration: none;
-        border: 1px solid #38AEF0;
-        padding: 11px 20px;
-        text-align: center;
+    .edit-button {
+      float: right;
+      margin-top: 28px;
+      .button-name {
+        a {
+          color: #38AEF0;
+          text-decoration: none;
+          border: 1px solid #38AEF0;
+          padding: 11px 20px;
+          text-align: center;
+        }
       }
     }
   }
 
   #chat {
+    width: calc(100vw - 380px);
     height: calc(100vh - 90px - 146px);
-    padding-top: 46px;
-    padding-left: 40px;
-    clear: both;
+    padding: 46px 40px 0 40px;
+    float: left;
     background-color: #FAFAFA;
     .chat__comment1 {
       @include comment-style;
@@ -56,19 +56,26 @@
 
   #footer {
     height: 50px;
+    width: calc(100vw - 390px);
     background-color: #dddddd;
     padding: 20px 50px 20px 40px;
+    float: left;
     .message-area {
       form {
-        input {
+        input[class="comment-form"] {
+          height: 50px;
+          width: calc(100% - 150px);
+          border: none;
           &::placeholder {
             color: #434A54;
             padding-left: 10px;
           }
-          &[class="comment-form"] {
-            height: 50px;
-            width: calc(100% - 150px);
-            border: none;
+        }
+        .upload-label {
+          padding-right: 10px;
+          background-color: #ffffff;
+          .upload-icon {
+            display: none;
           }
         }
       }
@@ -86,6 +93,3 @@
       }
     }
   }
-
-}
-

@@ -7,16 +7,16 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-  #body
     #group-header
-      .group-name
-        sampleグループ
-      .group-members
-        Members: seo neko
+      .group-left
+        .group-name
+          sampleグループ
+        .group-members
+          Members: seo neko
 
-    .edit-button
-      .button-name
-        =link_to "Edit"
+      .edit-button
+        .button-name
+          =link_to "Edit"
 
     #chat
       .chat__comment1
@@ -39,5 +39,10 @@
       .message-area
         %form{:action => "/", :method => "post"}
           %input{:name => "comment", :placeholder => "type a message", :class => "comment-form"}
+          %label.upload-label
+            %i.fa.fa-picture-o
+            %input{:type => "file", :class => "upload-icon"}
+
+
       .send-button
         =link_to "Send"
