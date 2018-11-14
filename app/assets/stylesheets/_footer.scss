@@ -9,13 +9,13 @@
     .message-area {
       form {
         input[class="comment-form"] {
+          padding: 0 10px;
           float: left;
           height: $formHeight;
-          width: calc(100% - 150px);
+          width: calc(100% - 170px);
           border: none;
           &::placeholder {
             color: #434A54;
-            padding-left: 10px;
           }
         }
         .image-form {
