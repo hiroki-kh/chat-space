@@ -5,24 +5,24 @@
     padding: 20px 50px 20px 40px;
     float: left;
     .message-area {
-          .comment-form {
-          padding: 0 10px;
+      .comment-form {
+      padding: 0 10px;
+      float: left;
+      height: $formHeight;
+      width: calc(100% - 170px);
+      border: none;
+      &::placeholder {
+        color: #434A54;
+      }
+    }
+      .image-form {
+        line-height: 50px;
+        .upload-label {
           float: left;
-          height: $formHeight;
-          width: calc(100% - 170px);
-          border: none;
-          &::placeholder {
-            color: #434A54;
-          }
+          padding-right: 10px;
+          background-color: #ffffff;
         }
-        .image-form {
-          line-height: 50px;
-          .upload-label {
-            float: left;
-            padding-right: 10px;
-            background-color: #ffffff;
-          }
-        }
+      }
     }
     .send-button {
       a {

@@ -1,16 +1,16 @@
 @mixin comment-style {
   margin-bottom: 40px;
-  .member {
+  &__member {
     float: left;
     margin-right: 10px;
     color: #434A54;
     }
-  .chat__time {
+  &__time {
     float: left;
     font-size: 12px;
     color: #999999;
   }
-  .comment {
+  &__text {
     clear: both;
     font-size: 14px;
     color: #434A54;

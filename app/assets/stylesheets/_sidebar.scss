@@ -2,47 +2,50 @@
   height: 100vh;
   width: $sideBarWidth;
   float: left;
-    #header {
-      font-size: 16px;
-      color: #ffffff;
-      background-color: #253141;
-      width: $sideBarWidth;
-      height: 100px;
-      line-height: 100px;
-        .user__name {
-          margin-left: $sideBarLeftSpace;
-            .font-awesome__user {
-              float: right;
-              margin-right: 20px;
-                li {
-                  float: left;
-                  padding-right: 5px;
-                    a {
-                      color: #ffffff;
-                      text-decoration: none;
-                    }
-                }
+  #header {
+    font-size: 16px;
+    color: #ffffff;
+    background-color: #253141;
+    width: $sideBarWidth;
+    height: 100px;
+    line-height: 100px;
+    .user {
+      &__name {
+        margin-left: $sideBarLeftSpace;
+        .font-awesome__user {
+          float: right;
+          margin-right: 20px;
+          li {
+            float: left;
+            padding-right: 5px;
+            a {
+              color: #ffffff;
+              text-decoration: none;
             }
+          }
         }
+      }
     }
+  }
 
-    #navbar {
-      width: $sideBarWidth;
-      background-color: #2f3e51;
-      height: calc(100vh - 120px);
-      padding-top: 20px;
-        .group__name {
-          font-size: 15px;
-          color: #ffffff;
-          margin-left: $sideBarLeftSpace;
-        }
-        .group--last-message {
-          font-size: 11px;
-          color: #ffffff;
-          margin-left: 20px;
-          padding-top: 5px;
-          padding-bottom: 40px;
-        }
+  #navbar {
+    width: $sideBarWidth;
+    background-color: #2f3e51;
+    height: calc(100vh - 120px);
+    padding-top: 20px;
+    .group {
+      &__name {
+        font-size: 15px;
+        color: #ffffff;
+        margin-left: $sideBarLeftSpace;
+      }
+      &--last-message {
+        font-size: 11px;
+        color: #ffffff;
+        margin-left: 20px;
+        padding-top: 5px;
+        padding-bottom: 40px;
+      }
     }
-
+  }
 }
