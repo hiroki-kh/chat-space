@@ -5,6 +5,28 @@
     %title ChatSpace
 
   %body
+  #wrapper
+    #sidebar
+      #header
+        .user
+          .user__name
+            = current_user.name
+            .font-awesome__user
+              %ul.font-awesome__user--list
+                %li.font-awesome--create-group.font-color
+                  =link_to do
+                    =fa_icon 'edit'
+                %li.font-awesome--edit-user.font-color
+                  =link_to edit_user_path(current_user) do
+                    =fa_icon 'cog'
+
+      #navbar
+        .group
+          .group__name
+            sample
+          .group--last-message
+            Good by world!
+
     #group-header
       .group-left
         .group-left__name
