@@ -1,0 +1,10 @@
+.comment
+  .comment__member
+    = message.user.name
+  .comment__time
+    = format_posted_time(message.created_at)
+  .comment__text
+    - if message.content.present?
+      %p.message_content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

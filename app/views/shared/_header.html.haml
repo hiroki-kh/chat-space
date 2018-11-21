@@ -1,0 +1,12 @@
+#group-header
+  .group-left
+    .group-left__name
+      = @group.name
+    .group-left__members
+      Members:
+      - @group.members.each do |member|
+        = member.user.name
+
+  .edit-button
+    .edit-button__name
+      =link_to "Edit"

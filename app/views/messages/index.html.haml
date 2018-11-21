@@ -6,4 +6,8 @@
 
   %body
   #wrapper
-
+    = render "/shared/side_bar"
+    = render "/shared/header"
+  #chat
+    = render @messages
+  = render "/shared/footer"

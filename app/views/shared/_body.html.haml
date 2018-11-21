@@ -1,18 +1,7 @@
-#group-header
-  .group-left
-    .group-left__name
-      sampleグループ
-    .group-left__members
-      Members: seo neko
-
-  .edit-button
-    .edit-button__name
-      =link_to "Edit"
-
 #chat
   .comment
     .comment__member
-      seo
+      = message.user.name
     .comment__time
       2016/09/21 06:16:55
     .comment__text
@@ -27,14 +16,14 @@
       Good by world!
 
 #footer
-  .message-area
-    =form_tag('/') do
-      =text_field_tag 'message', '', {class: "comment-form", placeholder: "type a message"}
+  =form_for [@group, @message] do |f|
+    .message-area
+      =f.text_field :content, class: "comment-form", placeholder: "type a message"
       .image-form
-        %label.upload-label{for: "upload-icon"}
+        = f.label :image, class: "upload-label" do
           %i.fa.fa-picture-o
-          = file_field_tag "image", id: "upload-icon", style: "display:none;"
+          = f.file_field :image, id: "upload-icon", style: "display:none;"
 
 
-  .send-button
-    =link_to "Send"
+    .send-button
+      = f.submit "Send", class: "form__submit"
