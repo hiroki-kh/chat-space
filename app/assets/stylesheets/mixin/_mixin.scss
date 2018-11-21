@@ -11,8 +11,10 @@
     color: #999999;
   }
   &__text {
-    clear: both;
-    font-size: 14px;
-    color: #434A54;
+    .message_content {
+      clear: both;
+      font-size: 14px;
+      color: #434A54;
+    }
   }
 }

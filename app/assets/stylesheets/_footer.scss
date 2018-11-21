@@ -21,20 +21,21 @@
           float: left;
           padding-right: 10px;
           background-color: #ffffff;
+          .hidden {
+            display: none;
+          }
         }
       }
     }
     .send-button {
-      a {
-        line-height: 50px;
-        float: right;
-        padding: 0px 30px;
-        margin-left: 15px;
-        height: $formHeight;
-        color: #ffffff;
-        background-color: $buttonAndInfoColor;
-        text-decoration: none;
-      }
+      line-height: 50px;
+      float: right;
+      padding: 0px 30px;
+      margin-left: 15px;
+      height: $formHeight;
+      color: #ffffff;
+      background-color: $buttonAndInfoColor;
+      text-decoration: none;
     }
   }
 

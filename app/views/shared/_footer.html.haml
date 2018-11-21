@@ -1,0 +1,10 @@
+#footer
+  =form_for [@group, @message] do |f|
+    .message-area
+      =f.text_field :content, class: "comment-form", placeholder: "type a message"
+      .image-form
+        = f.label :image, class: "upload-label" do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+
+      = f.submit "Send", class: "send-button"
