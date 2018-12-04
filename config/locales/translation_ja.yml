@@ -1,0 +1,35 @@
+ja:
+  activerecord:
+    models:
+      group: group  #g
+      member: member  #g
+      message: message  #g
+      user: user  #g
+
+    attributes:
+      group:
+        members: members  #g
+        messages: messages  #g
+        name: name  #g
+        users: users  #g
+
+      member:
+        group: :activerecord.models.group  #g
+        user: :activerecord.models.user  #g
+
+      message:
+        content: content  #g
+        group: :activerecord.models.group  #g
+        image: image  #g
+        user: :activerecord.models.user  #g
+
+      user:
+        email: email  #g
+        encrypted_password: encrypted_password  #g
+        groups: groups  #g
+        members: members  #g
+        messages: messages  #g
+        name: name  #g
+        remember_created_at: remember_created_at  #g
+        reset_password_sent_at: reset_password_sent_at  #g
+        reset_password_token: reset_password_token  #g
