@@ -1,5 +1,5 @@
 #footer
-  =form_for [@group, @message] do |f|
+  =form_for [@group, @message], html: {id: 'new_comment'} do |f|
     .message-area
       =f.text_field :content, class: "comment-form", placeholder: "type a message"
       .image-form
