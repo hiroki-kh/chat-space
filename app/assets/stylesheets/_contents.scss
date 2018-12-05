@@ -39,6 +39,7 @@
   }
 
   #chat {
+    overflow: scroll;
     width: $rightContentsWidth;
     height: calc(100vh - 90px - 146px);
     padding: 46px 40px 0 40px;
