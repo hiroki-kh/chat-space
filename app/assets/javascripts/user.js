@@ -49,6 +49,7 @@ $(function() {
     .fail(function() {
       alert('error');
     });
+    })
     $(document).on('click',".chat-group-user__btn--add", function() {
       var member = {};
       member.id = $(this).attr('data-user-id');
@@ -58,6 +59,5 @@ $(function() {
     })
     $(document).on('click',".chat-group-user__btn--remove", function(){
       $(this).parent().remove();
-    })
   });
 });
