@@ -41,23 +41,22 @@ $(function() {
         users.forEach(function(user){
           appendUser(user);
         });
-      }
-      else {
+      } else {
         appendNoUser("一致するユーザーはいません");
       }
     })
     .fail(function() {
       alert('error');
     });
-    })
-    $(document).on('click',".chat-group-user__btn--add", function() {
-      var member = {};
-      member.id = $(this).attr('data-user-id');
-      member.name = $(this).attr('data-user-name');
-      appendMember(member);
-      $(this).parent().remove();
-    })
-    $(document).on('click',".chat-group-user__btn--remove", function(){
-      $(this).parent().remove();
+  })
+  $(document).on('click',".chat-group-user__btn--add", function() {
+    var member = {};
+    member.id = $(this).attr('data-user-id');
+    member.name = $(this).attr('data-user-name');
+    appendMember(member);
+    $(this).parent().remove();
+  })
+  $(document).on('click',".chat-group-user__btn--remove", function(){
+    $(this).parent().remove();
   });
 });
