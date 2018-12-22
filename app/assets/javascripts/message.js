@@ -1,6 +1,7 @@
 $(function() {
   function buildHTML(message){
-    var html = `<div class="comment__member">
+    var html = `<div class="comment", data-message-id="${message.id}">
+                <div class="comment__member">
                   ${message.user_name}
                 </div>
                 <div class="comment__time">
@@ -10,11 +11,13 @@ $(function() {
                   <p class="message_content">
                     ${message.content}
                   </p>
+                </div>
                 </div>`
     return html;
   }
   function buildImageHTML(message){
-    var html = `<div class"comment__member">
+    var html = `<div class="comment", data-message-id="${message.id}">
+                <div class"comment__member">
                   ${message.user_name}
                 </div>
                 <div class="comment__time">
@@ -27,6 +30,7 @@ $(function() {
                   <p class="lower-message__image">
                     <img src="${message.image.url}">
                   </p>
+                </div>
                 </div>`
     return html;
   }
@@ -58,5 +62,32 @@ $(function() {
       alert('error');
     })
   })
+
+  var interval = setInterval(function(){
+    if(window.location.href.match(/\/groups\/\d+\/messages/)){
+    $.ajax({
+      type: 'GET',
+      url: location.href.json,
+      processData: false,
+      contentType: false,
+      dataType: 'json',
+    })
+    .done(function(json){
+      var id = $('.comment:last').data('messageId');
+      var insertHTML = '';
+      json.messages.forEach(function(message){
+        if(message.id > id) {
+          insertHTML += buildHTML(message);
+        }
+      });
+      $('#chat').append(insertHTML);
+      $('#chat').animate({scrollTop:$('#chat')[0].scrollHeight});
+    })
+    .fail(function(json){
+      alert('自動更新に失敗しました');
+    })
+  } else {
+    clearInterval(interval);
+  }}, 5000);
 });
 
