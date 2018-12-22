@@ -65,20 +65,19 @@ $(function() {
 
   var interval = setInterval(function(){
     if(window.location.href.match(/\/groups\/\d+\/messages/)){
+      var id = $('.comment:last').data('messageId');
     $.ajax({
       type: 'GET',
-      url: location.href.json,
-      processData: false,
+      url: location.href,
       contentType: false,
       dataType: 'json',
+      data: { id: id},
     })
-    .done(function(json){
-      var id = $('.comment:last').data('messageId');
+    .done(function(messages){
+      console.log(messages);
       var insertHTML = '';
-      json.messages.forEach(function(message){
-        if(message.id > id) {
-          insertHTML += buildHTML(message);
-        }
+      messages.forEach(function(message){
+        insertHTML += buildHTML(message);
       });
       $('#chat').append(insertHTML);
       $('#chat').animate({scrollTop:$('#chat')[0].scrollHeight});
