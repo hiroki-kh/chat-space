@@ -1,5 +1,6 @@
 $(function() {
   function buildHTML(message){
+    var image = (message.image.url) ? `<p class="lower-message__image"><img src="${message.image.url}"></p>`:"";
     var html = `<div class="comment", data-message-id="${message.id}">
                 <div class="comment__member">
                   ${message.user_name}
@@ -11,29 +12,12 @@ $(function() {
                   <p class="message_content">
                     ${message.content}
                   </p>
+                  ${image}
                 </div>
                 </div>`
     return html;
   }
-  function buildImageHTML(message){
-    var html = `<div class="comment", data-message-id="${message.id}">
-                <div class"comment__member">
-                  ${message.user_name}
-                </div>
-                <div class="comment__time">
-                  ${message.created_at}
-                </div>
-                <div class="comment__text">
-                  <p class="message_content">
-                    ${message.content}
-                  </p>
-                  <p class="lower-message__image">
-                    <img src="${message.image.url}">
-                  </p>
-                </div>
-                </div>`
-    return html;
-  }
+
   $('#new_comment').on('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(this);
@@ -47,12 +31,7 @@ $(function() {
       contentType: false,
     })
     .done(function(data){
-      if (data.image.url == null) {
-        var html = buildHTML(data);
-      }
-      else {
-        var html = buildImageHTML(data);
-      }
+      var html = buildHTML(data);
       $('#chat').append(html)
       $('.comment-form').val('');
       $('#chat').animate({scrollTop:$('#chat')[0].scrollHeight});
