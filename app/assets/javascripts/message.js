@@ -56,7 +56,6 @@ $(function() {
       messages.forEach(function(message){
         $('#chat').append(buildHTML(message));
         $('#chat').animate({scrollTop:$('#chat')[0].scrollHeight});
-        console.log(messages);
       });
     })
     .fail(function(json){
