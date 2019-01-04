@@ -65,16 +65,15 @@ $(function() {
 
   var interval = setInterval(function(){
     if(window.location.href.match(/\/groups\/\d+\/messages/)){
-      var id = $('.comment:last').data('messageId');
+      var last_id = $('.comment').filter(":last").data('messageId');
     $.ajax({
       type: 'GET',
       url: location.href,
       contentType: false,
       dataType: 'json',
-      data: { id: id},
+      data: { last_id: last_id},
     })
     .done(function(messages){
-      console.log(messages);
       var insertHTML = '';
       messages.forEach(function(message){
         insertHTML += buildHTML(message);
