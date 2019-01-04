@@ -1,6 +1,6 @@
 $(function() {
   function buildHTML(message){
-    var image = (message.image.url) ? `<p class="lower-message__image"><img src="${message.image.url}"></p>`:"";
+    var image = (message.image.url) ? `<img src="${message.image.url}">`:"";
     var html = `<div class="comment", data-message-id="${message.id}">
                 <div class="comment__member">
                   ${message.user_name}
@@ -53,12 +53,11 @@ $(function() {
       data: { last_id: last_id},
     })
     .done(function(messages){
-      var insertHTML = '';
       messages.forEach(function(message){
-        insertHTML += buildHTML(message);
+        $('#chat').append(buildHTML(message));
+        $('#chat').animate({scrollTop:$('#chat')[0].scrollHeight});
+        console.log(messages);
       });
-      $('#chat').append(insertHTML);
-      $('#chat').animate({scrollTop:$('#chat')[0].scrollHeight});
     })
     .fail(function(json){
       alert('自動更新に失敗しました');
