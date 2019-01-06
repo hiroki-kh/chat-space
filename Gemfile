@@ -64,3 +64,6 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'i18n_generators'
 gem 'rails-i18n'
+group :production do
+  gem 'unicorn'
+end
